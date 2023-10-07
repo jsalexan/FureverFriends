@@ -43,7 +43,6 @@ const newFormHandler = async (event) => {
 const deleteBtnHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-    console.log(id)
     const response = await fetch(`/api/post/${id}`, {
       method: 'DELETE',
     });
@@ -55,6 +54,7 @@ const deleteBtnHandler = async (event) => {
     }
   }
 };
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const createPostBar = document.querySelector(".create-post-bar");
@@ -85,6 +85,8 @@ document
   .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.post-listz')
-  .addEventListener('click', deleteBtnHandler);
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('deletebtn')) {
+      deleteBtnHandler(event);
+    }
+  });
