@@ -81,11 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener('submit', function (event) {
-  if (event.target.classList.contains('new-post-form')) {
-    event.preventDefault();
-  }
-});
+document
+  .querySelector('.new-post-form')
+  .addEventListener('submit', newFormHandler);
 
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('deletebtn')) {
