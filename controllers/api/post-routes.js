@@ -31,7 +31,7 @@ cloudinary.config({
 router.post('/', withAuth, upload.single('image'), async (req, res) => {
   try {
     await cloudinary.uploader.upload(req.file.path, function (result) {
-      console.log(result)
+      console.log(process.env.CLOUDINARY_API_KEY)
       req.body.image = result.secure_url;
       req.body.imageId = result.public_id;
 
