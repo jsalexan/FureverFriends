@@ -31,7 +31,8 @@ const newFormHandler = async (event) => {
       method: 'POST',
       body: formData,
     });
-
+    console.log(response);
+    
     if (response.ok) {
       document.location.replace('/post');
     } else {
