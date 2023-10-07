@@ -1,0 +1,45 @@
+<div class="single-post-container my-4">
+    <div class="row card col-sm-11 col-md-9 col-lg-8 mx-auto my-2">
+        <div class="col-sml-8 posts">
+            <div id="post-head">
+                <div id="namerz">
+                    <a href="/profile/{{post.user.id}}" id="viewProfile">
+                        <img class="one-avatar" src="{{post.user.profile.avatar}}" height="50px" width="50px" style="border-radius:10px">
+                    </a>
+                    <a href="/profile/{{post.user.id}}" id="viewProfile">{{post.user.name}} </a>
+                </div>
+                <h2 id="post-title-comment">
+                    {{post.title}}
+                </h2>
+                <p></p>
+            </div>
+            <img class="img-responsive" src="{{post.image}}">
+            <p id="post-content">
+                {{post.body}}
+            </p>
+            <div id="bottomz">
+                <div id="commentz">
+                    <p class="post-meta numberz">
+                        {{post.comments.length}} {{format_plural "bark" post.comments.length}}
+                    </p>
+                </div>
+                <div id="footerz"> {{format_date post.date_created}}</div>
+            </div>
+        </div>
+        <div class="justify-content-center" id="content-cont">
+        <form class="comment-form justify-content-center row">
+            <div class="input-field add-bark">
+                <textarea type="text" id="comment" placeholder="What would you like to bark about?"></textarea>
+            </div>
+            <input type="hidden" name="post-id" value="{{post.id}}">
+            <button type="submit" id="comment-btn">Add Bark</button>
+        </form>
+        </div>
+        <div id="#comments">
+            {{> comments post.comments }}
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/comment.js"></script>

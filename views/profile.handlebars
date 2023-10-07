@@ -1,0 +1,41 @@
+{{#if profile.user_id}}
+<div class="row viewProfiles" id="viewProfileCard">
+  <div class="card mx-auto col-sm-12 col-md-8 col-lg-6 my-5 text-center view-profile">
+    <div class="info-block my-2">
+      <h3 id="view-dog-avatar"><img class="rounded" src="{{profile.avatar}}" height="110px" width="110px"></h3>
+    </div>
+    <div class="info-block">
+      <h3 id="view-dog-name">{{profile.dog_name}}</h3>
+    </div>
+    <div class="info-block">
+      <span class="profile-header">Breed: </span><span id="view-dog-breed">{{profile.breed}}</span>
+    </div>
+    <div class="info-block">
+      <span class="profile-header">Gender: </span><span id="view-dog-gender">{{profile.gender}}</span>
+    </div>
+    <div class="info-block">
+      <span class="profile-header">Size: </span><span id="view-dog-size">{{profile.size}}</span>
+    </div>
+    <div class="info-block">
+      <span class="profile-header">Neighborhood: </span><span id="view-dog-neighborhood">{{profile.neighborhood}}</span>
+    </div>
+    <div class="info-block">
+      <span class="profile-header">Hobbies: </span><span id="view-dog-hobbies">{{profile.hobbies}}</span>
+    </div>
+  </div>
+</div>
+
+{{else}}
+
+<div class="row">
+  <div class="card mx-auto col-sm-10 col-md-8 col-lg-6 my-5 text-center">
+    <span> You haven't created a profile. Create one now!</span>
+    <div>
+        <a href="./createProfile" class="btn btn-primary ct-ac-btn" id="createProfile">Create Profile</a>
+    </div>
+  </div>
+</div>
+
+{{/if}}
+
+<script src="/js/profile.js"></script>

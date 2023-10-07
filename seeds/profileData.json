@@ -1,0 +1,42 @@
+[
+    {
+      "avatar": "https://res.cloudinary.com/dlxjksvbc/image/upload/v1694814666/dog3_ad2syv.png",
+      "dog_name": "Buddy",
+      "breed": "Chihuahua",
+      "gender": "Male",
+      "size": "Large",
+      "neighborhood": "Downtown",
+      "hobbies": "Playing fetch, swimming",
+      "user_id": 1
+    },
+    {
+      "avatar": "https://res.cloudinary.com/dlxjksvbc/image/upload/v1694814662/dog1_se7pix.png",
+      "dog_name": "Luna",
+      "breed": "Labrador Retriever",
+      "gender": "Female",
+      "size": "Medium",
+      "neighborhood": "Suburbia",
+      "hobbies": "Running in the park",
+      "user_id": 2
+    },
+    {
+      "avatar": "https://res.cloudinary.com/dlxjksvbc/image/upload/v1694814663/dog8_uh9xlw.png",
+      "dog_name": "Rocky",
+      "breed": "French Bulldog",
+      "gender": "Male",
+      "size": "Large",
+      "neighborhood": "Rural",
+      "hobbies": "Chasing squirrels",
+      "user_id": 3
+    },
+    {
+      "avatar": "https://res.cloudinary.com/dlxjksvbc/image/upload/v1694814664/dog7_nrcvka.png",
+      "dog_name": "Daisy",
+      "breed": "Beagle",
+      "gender": "Female",
+      "size": "Small",
+      "neighborhood": "Urban",
+      "hobbies": "Digging holes",
+      "user_id": 4
+    }
+  ]

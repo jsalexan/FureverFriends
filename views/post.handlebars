@@ -1,0 +1,89 @@
+<div class="create-post-bar">
+  <span class="create-post-text"></span>
+  <button class="create-post-toggle"><i class="fa-duotone fa-message-plus fa-beat fa-2xs newPost" style="--fa-primary-color: #2aaee4; --fa-secondary-color: #ffd657; --fa-secondary-opacity: 100;"></i></i></button>
+</div>
+
+<!-- The Create Post form (initially hidden) -->
+<div class="modal-overlay">
+  <div class="create-post-modal">
+    <span class="modal-close">X</span>
+<div class="create-post-form">
+<div class="row" id="new-post">
+  <div class="card mx-auto col-12 my-2 py-3 text-center shadow-sm">
+    <h3 class="create-post-title">Create a new post:</h3>
+    <form class="form new-post-form" enctype="multipart/form-data">
+      <div class="form-group row justify-content-center">
+        <input class="form-input col-8 post-input-title " placeholder="Your post title" type="text" 
+          name="title" />
+      </div>
+      <div class="form-group row mt-3 justify-content-center">
+         <textarea class="form-input col-8 post-input-title pt-3" rows="6" placeholder="Your message..." id="post-body" style="height: 100px"
+          name="body" ></textarea>
+      </div>
+      <label class="mt-3 cloud-txt" for="image">Upload a Picture: </label>
+      <div class="form-group mt-3 ml-8" id="uploadbtn">
+        
+        <input type="file" id="image" name="image" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary create-btn">CREATE</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Loop over each object in the posts -->
+{{#each posts as |post|}}
+<div class="overflow-auto post-listz">
+  <div class="row card col-sm-11 col-md-9 col-lg-8 mx-auto my-2 shadow">
+    <div class="col-sml-8 posts">
+      <div id="post-head">
+        <div id="namerz">
+          <a href="/profile/{{post.user.id}}" id="viewProfile">
+            <img class="one-avatar" src="{{post.user.profile.avatar}}" data-user-id="{{post.user.id}}" height="50px" width="50px" style="border-radius:10px">
+          </a>
+          <a href="/profile/{{post.user.id}}" id="viewProfile">{{post.user.name}} </a>
+        </div>
+        <h2 id="post-title">
+          <a href="/post/{{id}}">{{post.title}}</a>
+        </h2>
+        <button type="button" data-id="{{post.id}}" class="deletebtn">X</button>
+      </div>
+      <img class="img-responsive mainphotoz" src="{{post.image}}">
+      <p id="post-content">
+        {{post.body}}
+      </p>
+
+
+      {{!-- Like button (bone) --}}
+      {{!-- <div class="like-bar">
+        <button class="like"><img
+            src="https://user-images.githubusercontent.com/110498167/205177592-aece83f0-8143-4f62-ba8f-54a402853766.png"
+            class="heart"></button>
+        <p class="like-number">0</p>
+      </div> --}}
+
+      {{!-- Comments link and Date bar --}}
+      <div id="bottomz">
+        <div id="commentz">
+          <p class="post-meta numberz">
+            <a href="/post/{{id}}">{{comments.length}} {{format_plural "bark" comments.length}} (+) </a>
+          </p>
+        </div>
+        <div class="like-bar">
+          <button class="like"><img
+              src="https://user-images.githubusercontent.com/110498167/205177592-aece83f0-8143-4f62-ba8f-54a402853766.png"
+              class="heart"></button>
+          <p class="like-number">0</p>
+        </div>
+        <div id="footerz"> {{format_date post.date_created}}</div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+<script src="/js/post.js"></script>
+<script src="/js/like.js"></script>

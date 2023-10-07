@@ -1,0 +1,20 @@
+{{#each this}}
+<div class="comments card mx-auto col-sm-10 my-3 py-1 text-center">
+  <section class="comment">
+    <div class="meta">
+      <div id="post-head-commentz">
+        <div id="namerz-commentz">
+          <a href="/profile/{{user.id}}" id="viewProfile">
+            <img class="one-avatar" src="{{user.profile.avatar}}" height="50px" width="50px" style="border-radius:10px">
+          </a>
+          <a href="/profile" id="viewProfile">{{user.name}} </a>
+        </div>
+        <div class="text text-commentz">
+          {{comment_body}}
+        </div>
+        <p id="comment-card-date">{{format_date dateCreated}}</p>
+      </div>
+    </div>
+  </section>
+</div>
+{{/each}}

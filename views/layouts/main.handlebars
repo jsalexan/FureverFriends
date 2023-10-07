@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Furever Friends 🐾</title>
+  <script src="https://kit.fontawesome.com/ef834185ba.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<html lang="en">
+
+<head>
+  <!-- ... (your head content) ... -->
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand top" href="/"><img class="title"
+          src="https://res.cloudinary.com/dlxjksvbc/image/upload/v1695509944/title-2_jadyr9.png"></a>
+      <!-- Conditionally render login or logout links -->
+      {{#if logged_in}}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa-solid fa-bars" style="color: #ffd657;"></i></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+  <a href="/profile/{{ user_id }}" class="nav-link col-20 mx-1 nav-links">My Profile</a>
+</li>
+
+          <li class="nav-item">
+            <a class="nav-link col-20 mx-1 nav-links" href="/post">Lickin' Post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link col-20 mx-1 nav-links" href="/">Logout</a>
+          </li>
+        </ul>
+      </div>
+      {{else}}
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link col-20 mx-1 nav-links" href="/">Login</a>
+          </li>
+        </ul>
+      </div>
+      {{/if}}
+    </div>
+  </nav>
+
+  <main>
+    <div class="bg-image">
+      <!-- Render the sub layout -->
+      {{{body}}}
+    </div>
+  </main>
+  <footer class="justify-content-center">
+    <span>Created by OhMyDog 2022</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
