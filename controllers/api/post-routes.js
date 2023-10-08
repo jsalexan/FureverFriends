@@ -22,14 +22,16 @@ var upload = multer({ storage: storage, fileFilter: imageFilter })
 
 var cloudinary = require('cloudinary');
 cloudinary.config({
-  CLOUDINARY_URL: process.env.CLOUDINARY_URL
+  cloud_name: process.env.CLOUDINARY_API_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
 });
-console.log(process.env.CLOUDINARY_URL);
+
 // Routes to create new posts
 router.post('/', withAuth, upload.single('image'), async (req, res) => {
   try {
     await cloudinary.uploader.upload(req.file.path, function (result) {
-      console.log("Here is your API: ", api_key)
+      console.log("Here is your API: ", process.env.CLOUDINARY_API_KEY)
       req.body.image = result.secure_url;
       req.body.imageId = result.public_id;
 
