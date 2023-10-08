@@ -336,6 +336,27 @@ img.one-avatar:not(:hover) {
     z-index: 0;
   }
 
+#profile-notice{
+    margin-top: 10px;
+    min-height: 200px;
+}
+
+#profile-notice span {
+    margin-top: 50px;
+    color: var(--main-color);
+    font-size: 18px;
+    margin-bottom: 20px;;
+}
+
+#createProfile {
+    background-color: var(--pop2);
+    color: var(--text);
+}
+
+#createProfile:hover {
+    background-color: var(--accent);
+    color: var(--main-color);
+}
 
 .profile-container {
     display: flex;
