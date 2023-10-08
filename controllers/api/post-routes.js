@@ -26,7 +26,7 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
-
+console.log(cloud_name);
 // Routes to create new posts
 router.post('/', withAuth, upload.single('image'), async (req, res) => {
   try {
